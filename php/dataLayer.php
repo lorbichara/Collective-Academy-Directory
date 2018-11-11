@@ -25,7 +25,7 @@
 
 		if($conn != null)
 		{
-			$sql = "SELECT fName, lName, email, phone, gender, linkedin, schoolName, major, jobTitle, company, groupName, skills
+			$sql = "SELECT fName, lName, email, phone, gender, linkedin, schoolName, major, picture, jobTitle, company, groupName, skills
 					FROM Person";
 
 			$result = $conn->query($sql);
@@ -46,7 +46,8 @@
 												"jobTitle" => $row["jobTitle"],
 												"company" => $row["company"],
 												"groupName" => $row["groupName"],
-												"skills" => $row["skills"]
+												"skills" => $row["skills"],
+												"picture" => $row["picture"]
 											));
 				}
 
@@ -65,7 +66,7 @@
 		}
 	}
 
-	function attemptRegistration($firstName, $lastName, $email, $phone, $gender, $linkedin, $schoolName, $major, $jobTitle, $company, $group, $skill)
+	function attemptRegistration($firstName, $lastName, $email, $phone, $gender, $linkedin, $schoolName, $major, $jobTitle, $company, $group, $skill, $picture)
 	{
 		$conn = connect();
 
@@ -85,7 +86,7 @@
             else
             {
             	$sql = "INSERT INTO Person(fName, lName, email, phone, gender, linkedin, schoolName, major, picture, jobTitle, company, groupName, skills)
-						VALUES ('$firstName', '$lastName', '$email', '$phone', '$gender', '$linkedin', '$schoolName', '$major', 'img/lBichara.jpg', '$jobTitle', '$company', '$group', '$skill');";
+						VALUES ('$firstName', '$lastName', '$email', '$phone', '$gender', '$linkedin', '$schoolName', '$major', '$picture', '$jobTitle', '$company', '$group', '$skill');";
 
 				if(mysqli_query($conn, $sql))
 					return array("status" => "SUCCESS", "code"=>200);

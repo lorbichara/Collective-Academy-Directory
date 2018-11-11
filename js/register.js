@@ -36,6 +36,8 @@ function validateRegister()
 	let $errorGroup = $('#errorGroup');
 	let $skill = $('#skill');
 	let $errorSkill = $('#errorSkill');
+	let $picture = $('#picture');
+	let $errorPicture = $('#errorPicture');
 
 	if($firstName.val() == "")
 	{
@@ -165,6 +167,17 @@ function validateRegister()
 		correctInfo = true;
 	}
 
+	if($picture.val() == "")
+	{
+		$errorPicture.removeClass('hiddenElement');
+		correctInfo = false;
+	}
+	else
+	{
+		$errorPicture.addClass('hiddenElement');
+		correctInfo = true;
+	}
+
 	if(correctInfo === true)
 	{
 		addRegistrationToDB();
@@ -198,6 +211,7 @@ function addRegistrationToDB()
 		"company" : $("#company").val(),
 		"group" : $("#groupSelector").val(),
 		"skill" : $("#skill").val(),
+		"picture" : $("picture").val(),
 		"action" : "REGISTER"
 	};
 

@@ -16,7 +16,7 @@ $.ajax({
 		{
 			newHtml +=`
 						<li>
-							<img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&amp;q=85&amp;fm=jpg&amp;crop=faces&amp;fit=crop&amp;cs=srgb&amp;s=1cd7edb2ed25c1de4908db807e545988&amp;w=150&amp;h=150" />
+							<img src="${data[i].picture}"/>
 							<div class="details">
 								<span class="name">${data[i].firstName} ${data[i].lastName}</span>
 								<span class="title">${data[i].jobTitle} @ ${data[i].company}</span>
@@ -29,10 +29,9 @@ $.ajax({
 						</li>`;
 		}
 		$('.cards').append(newHtml);
-		console.log(data[0].skills);
 	},
 	error : function(err)
 	{
-		console.log("enves - error.mp4");
+		console.log(err);
 	}
 });

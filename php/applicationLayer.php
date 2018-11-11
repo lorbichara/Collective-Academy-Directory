@@ -68,8 +68,9 @@
         $company = $_POST['company'];
         $group = $_POST['group'];
         $skill = $_POST['skill'];
+        $picture = $_POST['picture'];
 
-		$response = attemptRegistration($firstName, $lastName, $email, $phone, $gender, $linkedin, $schoolName, $major, $jobTitle, $company, $group, $skill);
+		$response = attemptRegistration($firstName, $lastName, $email, $phone, $gender, $linkedin, $schoolName, $major, $jobTitle, $company, $group, $skill, $picture);
 
 		if ($response["status"] == "SUCCESS")
 		{
