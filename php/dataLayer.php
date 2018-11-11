@@ -25,7 +25,7 @@
 
 		if($conn != null)
 		{
-			$sql = "SELECT email
+			$sql = "SELECT fName, lName, email, phone, gender, linkedin, schoolName, major, jobTitle, company, groupName, skills
 					FROM Person";
 
 			$result = $conn->query($sql);
@@ -34,7 +34,20 @@
 			{
 				while ($row = $result->fetch_assoc())
 				{
-					array_push($response, array("email" => $row["email"]));
+					array_push($response, array(
+												"firstName" => $row["fName"],
+												"lastName" => $row["lName"],
+												"email" => $row["email"],
+												"phone" => $row["phone"],
+												"gender" => $row["gender"],
+												"linkedin" => $row["linkedin"],
+												"schoolName" => $row["schoolName"],
+												"major" => $row["major"],
+												"jobTitle" => $row["jobTitle"],
+												"company" => $row["company"],
+												"groupName" => $row["groupName"],
+												"skills" => $row["skills"]
+											));
 				}
 
 				$conn->close();
