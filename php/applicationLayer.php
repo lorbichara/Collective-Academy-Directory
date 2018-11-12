@@ -27,6 +27,12 @@
 			case "DIRECTORY":
 				showDirectory();
 				break;
+			case "SEARCH":
+				searchContacts();
+				break;
+			case "FILTER":
+				filterContacts();
+				break;
 		}
 	}
 
@@ -43,6 +49,39 @@
 	function showDirectory()
 	{
 		$response = attemptToShowDirectory();
+
+		if ($response["status"] == "SUCCESS")
+		{
+			echo json_encode($response["response"]);
+		}
+		else
+		{
+			errorHandler($response["status"], $response["code"]);
+		}
+	}
+
+	function searchContacts()
+	{
+		$searchParam = $_GET['searchParam'];
+
+		$response = attemptToSearch($searchParam);
+
+		if ($response["status"] == "SUCCESS")
+		{
+			echo json_encode($response["response"]);
+		}
+		else
+		{
+			errorHandler($response["status"], $response["code"]);
+		}
+	}
+
+	function filterContacts()
+	{
+		$gender = $_GET['gender'];
+		$group = $_GET['group'];
+
+		$response = attemptToFilter($gender, $group);
 
 		if ($response["status"] == "SUCCESS")
 		{
