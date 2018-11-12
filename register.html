@@ -3,48 +3,58 @@
 	<head>
 		<title>Collective Academy Directory</title>
 		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="css/generic.css" type="text/css"/>
 		<link rel="stylesheet" href="css/register.css" type="text/css"/>
 		<link rel="icon" href="./img/favicon.ico">
 	</head>
 
 	<body>
-		<form>
-			<input type="text" id="firstName" placeholder="Nombre" class="inputTexts" />
+		<header id="logoHeader">
+			<img src="./img/redlogo.png" id="logoCA"/>
+			<input type="submit" id="goBackButton" class="buttons" value="Regresar"/>
+		</header>
+
+		<div class="parentDiv">
+			<form id="registerData">
+			<input type="text" id="firstName" placeholder="Nombre" class="inputTexts"/>
 			<span class="errorMessage hiddenElement" id="errorFirstName">Por favor introduce tu primer nombre</span>
 			<br><br>
-			<input type="text" id="lastName" placeholder="Apellido"/>
+			<input type="text" id="lastName" placeholder="Apellido" class="inputTexts"/>
 			<span class="errorMessage hiddenElement" id="errorLastName">Por favor introduce tu apellido</span>
 			<br><br>
-			<input type="email" id="email" placeholder="Email"/>
+			<input type="email" id="email" placeholder="Email" class="inputTexts"/>
 			<span class="errorMessage hiddenElement" id="errorEmail">Por favor introduce tu email</span>
 			<br><br>
-			<input type="tel" id="phoneNumber" placeholder="Número de teléfono"/>
+			<input type="tel" id="phoneNumber" placeholder="Número de teléfono" class="inputTexts"/>
 			<span class="errorMessage hiddenElement" id="errorPhone">Por favor introduce tu número teléfonico</span>
 			<br><br>
 			Hombre <input type="radio" name="gender" value="H">
 			Mujer <input type="radio" name="gender" value="M">
 			<span class="errorMessage hiddenElement" id="errorGender">Por favor selecciona tu género</span>
 			<br><br>
-			<input type="url" id="linkedin" placeholder="LinkedIn"/>
+			<input type="url" id="linkedin" placeholder="LinkedIn" class="inputTexts"/>
 			<span class="errorMessage hiddenElement" id="errorLinkedin">Por favor introduce tu cuenta de Linkedin</span>
 			<br><br>
-			<input type="text" id="schoolName" placeholder="Nombre de escuela"/>
+			<input type="text" id="schoolName" placeholder="Nombre de escuela" class="inputTexts"/>
 			<span class="errorMessage hiddenElement" id="errorSchool">Por favor introduce tu escuela</span>
 			<br><br>
-			<input type="text" id="major" placeholder="Carrera"/>
+			<input type="text" id="major" placeholder="Carrera" class="inputTexts"/>
 			<span class="errorMessage hiddenElement" id="errorMajor">Por favor introduce tu carrera</span>
 			<br><br>
-			<input type="text" id="jobTitle" placeholder="Puesto actual"/>
+			<input type="text" id="jobTitle" placeholder="Puesto actual" class="inputTexts"/>
 			<span class="errorMessage hiddenElement" id="errorJobTitle">Por favor introduce tu puesto actual</span>
 			<br><br>
-			<input type="text" id="company" placeholder="Compañía actual"/>
+			<input type="text" id="company" placeholder="Compañía actual" class="inputTexts"/>
 			<span class="errorMessage hiddenElement" id="errorCompany">Por favor introduce tu compañía</span>
 			<br><br>
-			<input type="text" id="picture" placeholder="Foto"/>
+			<input type="text" id="picture" placeholder="Foto" class="inputTexts"/>
 			<span class="errorMessage hiddenElement" id="errorPicture">Por favor agrega una foto</span>
 			<br><br>
+			<input type="text" id="skill" placeholder="Habilidad" class="inputTexts"/>
+			<span class="errorMessage hiddenElement" id="errorSkill">Por favor introduce una habilidad</span>
+			<br><br>
 			Relación con Collective Academy
-			<select id="groupSelector" onchange="showfield(this.options[this.selectedIndex].value)">
+			<select id="groupSelector">
 				<option value="0">Selecciona un grupo...</option>
 				<option value="Founding">Founding</option>
 				<option value="Alpha">Alpha</option>
@@ -60,21 +70,12 @@
 				<option value="Xi">Xi</option>
 				<option value="Mentor">Mentor</option>
 			</select>
-			<div id="div1"></div>
 			<span class="errorMessage hiddenElement" id="errorGroup">Por favor selecciona un grupo</span>
-			<br><br>
-			<input type="text" id="skill" placeholder="Habilidad"/>
-			<span class="errorMessage hiddenElement" id="errorSkill">Por favor introduce una habilidad</span>
-			<br><br>
-			<input type="submit" id="goBackButton" value="Regresar"/>
-			<input type="submit" id="registerButton" value="Enviar"/>
+			<br>
+			<br>
+			<input type="submit" id="registerButton" class="buttons" value="Enviar"/>
 		</form>
-
-		<!-- <form action="php/upload.php" method="post" enctype="multipart/form-data">
-		    Select image to upload:
-		    <input type="file" name="fileToUpload" id="fileToUpload">
-		    <input type="submit" value="Upload Image" name="submit">
-		</form> -->
+		</div>
 
 		<script src="./js/jquery.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/register.js"></script>

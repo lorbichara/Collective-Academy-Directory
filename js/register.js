@@ -184,16 +184,6 @@ function validateRegister()
 	}
 }
 
-//Function to make text field appear when "Mentor" is selected in the drop down menu.
-// https://www.sitepoint.com/community/t/form-drop-down-menus-select-other-and-make-a-textbox-appear/2789/2
-function showfield(name)
-{
-	if(name=='Mentor')
-		document.getElementById('div1').innerHTML='Class you teach: <input type="text" name="mentor" />';
-	else
-		document.getElementById('div1').innerHTML='';
-}
-
 //Function that adds entry to Database with information on a new person.
 function addRegistrationToDB()
 {
@@ -211,7 +201,7 @@ function addRegistrationToDB()
 		"company" : $("#company").val(),
 		"group" : $("#groupSelector").val(),
 		"skill" : $("#skill").val(),
-		"picture" : $("picture").val(),
+		"picture" : $("#picture").val(),
 		"action" : "REGISTER"
 	};
 

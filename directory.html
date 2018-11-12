@@ -3,14 +3,67 @@
 	<head>
 		<title>Collective Academy Directory</title>
 		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="css/generic.css" type="text/css"/>
 		<link rel="stylesheet" href="css/contact.css" type="text/css"/>
+		<link rel="stylesheet" href="css/filter.css" type="text/css"/>
+		<link rel="stylesheet" href="css/directory.css" type="text/css"/>
 		<link rel="icon" href="./img/favicon.ico">
 	</head>
 
 	<body>
+		<header id="logoHeader">
+			<img src="./img/redlogo.png" id="logoCA"/>
+			<input type="submit" id="logOutButton" class="buttons" value="Salir"/>
+		</header>
+
+		<div class="filterBar">
+			<input type="text" id="searchBar" class="inputTexts" placeholder="Busca un contacto"/>
+			<input type="submit" id="searchButton" class="buttons" value="Buscar"/>
+			<input type="submit" id="clearButton" class="buttons" value="Limpiar"/>
+			
+
+			<div class="dropdown">
+				<input type="submit" class="buttons" value="Filtrar">
+				<div class="dropdown-content">
+					<div class="dropdown-gender">
+						<strong>Género</strong>
+						<div>
+			      			<input type="radio" name="gender" value="H">
+			      			<label>Hombre</label>
+			   			</div>
+			    		<div>
+							<input type="radio" name="gender" value="M">
+					    	<label>Mujer</label>
+			    		</div>
+					</div>
+
+					<div class="dropdown-group">
+						<strong>Grupo</strong>
+						<br>
+			    		<input type="checkbox" name="group[]" value="Founding"/>Founding
+			    		<input type="checkbox" name="group[]" value="Alpha"/>Alpha
+			    		<input type="checkbox" name="group[]" value="Beta"/>Beta
+			    		<input type="checkbox" name="group[]" value="Gamma"/>Gamma
+			    		<br>
+			    		<input type="checkbox" name="group[]" value="Delta"/>Delta
+			    		<input type="checkbox" name="group[]" value="Epsilon"/>Epsilon
+			    		<input type="checkbox" name="group[]" value="Zeta"/>Zeta
+			    		<input type="checkbox" name="group[]" value="Kappa"/>Kappa
+			    		<br>
+			    		<input type="checkbox" name="group[]" value="Lambda"/>Lambda
+			    		<input type="checkbox" name="group[]" value="Mu"/>Mu
+			    		<input type="checkbox" name="group[]" value="Nu"/>Nu
+			    		<input type="checkbox" name="group[]" value="Xi"/>Xi
+			    	</div>
+			    	<br>
+		    		<input type="submit" id="applyFilterButton" class="buttons" value="Aplicar"/>
+				</div>
+			</div> 
+		</div>
+
+
 		<div class="container">
 			<ul class="cards">
-				
 			</ul>
 		</div>
 

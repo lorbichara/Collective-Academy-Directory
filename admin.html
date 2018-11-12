@@ -1,0 +1,38 @@
+<!DOCTYPE html5>
+<html>
+	<head>
+		<title>Collective Academy Directory</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="css/generic.css" type="text/css"/>
+		<link rel="stylesheet" href="css/contact.css" type="text/css"/>
+		<link rel="stylesheet" href="css/filter.css" type="text/css"/>
+		<link rel="stylesheet" href="css/directory.css" type="text/css"/>
+		<link rel="icon" href="./img/favicon.ico">
+	</head>
+
+	<body>
+	
+		<!-- FILTERS -->
+		<header id="logoHeader">
+			<img src="./img/redlogo.png" id="logoCA"/>
+			<input type="submit" id="logOutButton" class="buttons" value="Salir"/>
+		</header>
+
+		<div class="adminDiv">
+			<form id="adminForm">
+				Correo del contacto que se desea editar
+				<input type="email" id="email" placeholder="Email" class="inputTexts"/>
+
+				<input type="submit" class="buttons" id="editButton" value="Editar"/>
+				<br>
+				<div id="editSection">
+				</div>
+
+				<br>
+				<input type="submit" id="updateButton" class="buttons" value="Actualizar"/>
+			</form>
+		</div>
+		<script src="./js/jquery.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/admin.js"></script>
+	</body>
+</html>

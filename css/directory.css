@@ -1,0 +1,20 @@
+.filterBar {
+	height: 30%;
+	width: 100%;
+}
+
+.content {
+	height: 70%;
+	width: 100%;
+}
+
+#logOutButton {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+.filterBar {
+	background-color: #636466;
+	height: 7%;
+}

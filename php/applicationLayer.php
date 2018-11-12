@@ -18,6 +18,12 @@
 			$action = $_POST["action"];
 			postRequests($action);
 			break;
+
+		case "PUT":
+			parse_str(file_get_contents("php://input"), $put_vars);
+			$action = $put_vars["action"];
+			putRequests($action, $put_vars);
+			break;
 	}
 
 	function getRequests($action)
@@ -33,6 +39,9 @@
 			case "FILTER":
 				filterContacts();
 				break;
+			case "EDIT":
+				showInfo();
+				break;
 		}
 	}
 
@@ -42,6 +51,16 @@
 		{
 			case "REGISTER":
 				register();
+				break;
+		}
+	}
+
+	function putRequests($action, $put_vars)
+	{
+		switch($action)
+		{
+			case "UPDATEINFO":
+				updateInfo($put_vars);
 				break;
 		}
 	}
@@ -93,6 +112,22 @@
 		}
 	}
 
+	function showInfo()
+	{
+		$email = $_GET['email'];
+
+		$response = attemptProfileInfo($email);
+
+		if ($response["status"] == "SUCCESS")
+		{
+			echo json_encode($response["response"]);
+		}
+		else
+		{
+			errorHandler($response["status"], $response["code"]);
+		}
+	}
+
 	function register()
 	{
 		$firstName = $_POST['firstName'];
@@ -112,6 +147,31 @@
 		$response = attemptRegistration($firstName, $lastName, $email, $phone, $gender, $linkedin, $schoolName, $major, $jobTitle, $company, $group, $skill, $picture);
 
 		if ($response["status"] == "SUCCESS")
+		{
+			echo json_encode($response["response"]);
+		}
+		else
+		{
+			errorHandler($response["status"], $response["code"]);
+		}
+	}
+
+	function updateInfo($put_vars)
+	{
+		$firstName = $put_vars['firstName'];
+		$lastName = $put_vars['lastName'];
+		$email = $put_vars['email'];
+        $phone = $put_vars['phone'];
+        $linkedin = $put_vars['linkedin'];
+        $schoolName = $put_vars['schoolName'];
+        $major = $put_vars['major'];
+        $jobTitle = $put_vars['jobTitle'];
+        $company = $put_vars['company'];
+        $skill = $put_vars['skill'];
+
+        $response = attemptUpdate($firstName, $lastName, $email, $phone, $linkedin, $schoolName, $major, $jobTitle, $company, $skill);
+
+        if ($response["status"] == "SUCCESS")
 		{
 			echo json_encode($response["response"]);
 		}

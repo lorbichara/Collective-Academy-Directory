@@ -5,8 +5,20 @@ $('#registerNewButton').on('click', function(event)
 
 $('#openDirectoryButton').on('click', function(event)
 {
+	let $errorPassword = $('#errorPassword');
 	if($('#password').val() == "lorraine")
 		$(location).attr("href", "./directory.html");
-	else
-		alert("Contraseña incorrecta");
+	else {
+		$errorPassword.removeClass('hiddenElement');
+	}
+});
+
+$('#openAdminButton').on('click', function(event)
+{
+	let $errorPasswordAdmin = $('#errorPasswordAdmin');
+	if($('#passwordAdmin').val() == "admin")
+		$(location).attr("href", "./admin.html");
+	else {
+		$errorPasswordAdmin.removeClass('hiddenElement');
+	}
 });

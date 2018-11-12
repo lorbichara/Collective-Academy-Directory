@@ -4,35 +4,56 @@
 	<head>
 		<title>Collective Academy Directory</title>
 		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="css/generic.css" type="text/css"/>
 		<link rel="stylesheet" href="css/index.css" type="text/css"/>
 		<link rel="icon" href="./img/favicon.ico">
 	</head>
 
 	<body>
+		<header id="logoHeader">
+			<img src="./img/redlogo.png" id="logoCA"/>
+		</header>
+
 		<div id="indexTable">
 			<table>
 				<tr>
-					<th>¿Tienes contraseña?</th>
-					<th></th>
+		
+					<th><input type="password" id="password" class="inputTexts" placeholder="Contraseña"></th>
+					<th><span class="errorMessage hiddenElement" id="errorPassword">Contraseña Incorrecta</span></th>
+					<th><input type="submit" id="openDirectoryButton" class="buttons" value="Entrar"></th>
+				</tr>
+				<tr>	
+					<th><span class="errorMessage hiddenElement"></span></th>
+				</tr>
+				<tr>	
+					<th><span class="errorMessage hiddenElement"></span></th>
+				</tr>
+				<tr>	
+					<th><span class="errorMessage hiddenElement"></span></th>
+				</tr>
+				<tr>
 					<th>Ingresa tus datos</th>
+					<th><span class="errorMessage hiddenElement"></span></th>
+					<th><input type="submit" id="registerNewButton" class="buttons" value="Registrar"/></th>
+				</tr>
+				<tr>	
+					<th><span class="errorMessage hiddenElement"></span></th>
+				</tr>
+				<tr>	
+					<th><span class="errorMessage hiddenElement"></span></th>
+				</tr>
+				<tr>	
+					<th><span class="errorMessage hiddenElement"></span></th>
 				</tr>
 				<tr>
-					<th><input type="password" id="password" placeholder="Contraseña"></th>
-					<th>o</th>
-					<th><input type="submit" id="registerNewButton" value="Registrar"/></th>
-				</tr>
-				<tr>
-					<th><input type="submit" id="openDirectoryButton" value="Entrar"></th>
-					<th></th>
-					<th></th>
+	
+					<th><input type="password" id="passwordAdmin" class="inputTexts" placeholder="Contraseña Admin"></th>
+					<th><span class="errorMessage hiddenElement" id="errorPasswordAdmin">Contraseña Incorrecta</span></th>
+					<th><input type="submit" id="openAdminButton" class="buttons" value="Entrar"></th>
 				</tr>
 			</table>
 		</div>
 
-		
-		
-		
-		
 		<script src="./js/jquery.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 	</body>

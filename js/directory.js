@@ -1,40 +1,46 @@
-let jsonToSendDirectory =
-{
-	"action" : "DIRECTORY"
-};
+showDirectory();
 
-$.ajax({
-	url : "./php/applicationLayer.php",
-	type : "GET",
-	data : jsonToSendDirectory,
-	ContentType : "application/json",
-	dataType : "json",
-	success : function(data)
+function showDirectory()
+{
+	let jsonToSendDirectory =
 	{
-		let newHtml = '';
-		for(let i = 0; i < data.length; i++)
+		"action" : "DIRECTORY"
+	};
+
+	$.ajax({
+		url : "./php/applicationLayer.php",
+		type : "GET",
+		data : jsonToSendDirectory,
+		ContentType : "application/json",
+		dataType : "json",
+		success : function(data)
 		{
-			newHtml +=`
-						<li>
-							<img src="${data[i].picture}"/>
-							<div class="details">
-								<span class="name">${data[i].firstName} ${data[i].lastName}</span>
-								<span class="title">${data[i].jobTitle} @ ${data[i].company}</span>
-								<span class="title">${data[i].major} @ ${data[i].schoolName}</span>
-								<span class="title">${data[i].groupName}</span>
-								<span class="title">${data[i].skills}</span>
-								<a class="phone" href="tel:${data[i].phone}">${data[i].phone}</a>
-								<a class="email" href="mailto:${data[i].email}">${data[i].email}</a>
-							</div>
-						</li>`;
+			let newHtml = '';
+			for(let i = 0; i < data.length; i++)
+			{
+				newHtml +=`
+							<li>
+								<img src="${data[i].picture}"/>
+								<div class="details">
+									<span class="name">${data[i].firstName} ${data[i].lastName}</span>
+									<span class="title">${data[i].jobTitle} @ ${data[i].company}</span>
+									<span>${data[i].major} @ ${data[i].schoolName}</span>
+									<span>${data[i].groupName}</span>
+									<span>${data[i].skills}</span>
+									<a class="phone" href="tel:${data[i].phone}">${data[i].phone}</a>
+									<a class="email" href="mailto:${data[i].email}">${data[i].email}</a>
+									<a href="${data[i].linkedin}" target="_blank">LinkedIn</a>
+								</div>
+							</li>`;
+			}
+			$('.cards').append(newHtml);
+		},
+		error : function(err)
+		{
+			console.log(err);
 		}
-		$('.cards').append(newHtml);
-	},
-	error : function(err)
-	{
-		console.log(err);
-	}
-});
+	});
+}
 
 $('#searchButton').on('click', function(event)
 {
@@ -85,11 +91,17 @@ $('#clearFilterButton').on('click', function(event)
 {
 	$('input[type=radio]').prop('checked',false);
 	$('input[type=checkbox]').prop('checked',false);
+	$(location).attr("href", "./directory.html");
 });
 
 $('#applyFilterButton').on('click', function(event)
 {
 	filter();
+});
+
+$('#clearButton').on('click', function(event)
+{
+	$(location).attr("href", "./directory.html");
 });
 
 function filter()
@@ -144,3 +156,9 @@ function filter()
 		}
 	});
 }
+
+$('#logOutButton').on('click', function(event)
+{
+	$(location).attr("href", "./index.html");
+});
+
