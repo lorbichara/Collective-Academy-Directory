@@ -124,7 +124,7 @@
 					FROM Person
 					WHERE gender = '$gender' OR groupName = '$group[0]' OR groupName = '$group[1]' OR groupName = '$group[2]' OR groupName = '$group[3]'
 					OR groupName = '$group[4]' OR groupName = '$group[4]' OR groupName = '$group[5]' OR groupName = '$group[6]' OR groupName = '$group[7]'
-					OR groupName = '$group[8]' OR groupName = '$group[9]' OR groupName = '$group[10]'";
+					OR groupName = '$group[8]' OR groupName = '$group[9]' OR groupName = '$group[10]' OR groupName = '$group[11]'";
 
 			$result = $conn->query($sql);
 			$response = array();
