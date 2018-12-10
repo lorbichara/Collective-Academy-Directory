@@ -1,8 +1,10 @@
 $('#editButton').on('click', function(event) {
 	event.preventDefault();
+	$('#updateButton').removeClass('hiddenElement');
+
 	let jsonToSendEdit ={
                           "email" : $("#email").val(),
-                          "action" : "EDIT"}; //Test user.
+                          "action" : "EDIT"};
 
 	$.ajax({
 	  url: './php/applicationLayer.php',
@@ -41,7 +43,6 @@ $('#editButton').on('click', function(event) {
 	  }
 	});
 });
-
 
 $('#updateButton').on('click', function(event) {
 	event.preventDefault();
