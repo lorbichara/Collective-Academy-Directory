@@ -6,7 +6,7 @@ $('#registerNewButton').on('click', function(event)
 $('#openDirectoryButton').on('click', function(event)
 {
 	let $errorPassword = $('#errorPassword');
-	if($('#password').val() == "lorraine")
+	if($('#password').val() == "directorio")
 		$(location).attr("href", "./directory.html");
 	else {
 		$errorPassword.removeClass('hiddenElement');
