@@ -157,4 +157,3 @@ $('#logOutButton').on('click', function(event)
 {
 	$(location).attr("href", "./index.html");
 });
-

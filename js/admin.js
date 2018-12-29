@@ -83,3 +83,8 @@ $('#updateButton').on('click', function(event) {
 		}
 	});
 });
+
+$('#logOutButton').on('click', function(event)
+{
+	$(location).attr("href", "./index.html");
+});
