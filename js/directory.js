@@ -75,6 +75,7 @@ function searchContact()
 									<span class="title">${data[i].skills}</span>
 									<a class="phone" href="tel:${data[i].phone}">${data[i].phone}</a>
 									<a class="email" href="mailto:${data[i].email}">${data[i].email}</a>
+									<a href="${data[i].linkedin}" target="_blank">LinkedIn</a>
 								</div>
 							</li>`;
 			}
@@ -110,11 +111,6 @@ function filter()
 	$(':checkbox:checked').each(function(i) {
 		groupVal[i] = $(this).val();
 	});
-
-	// for(let i = 0; i < groupVal.length; i++)
-	// {
-	// 	console.log(groupVal[i]);
-	// }
 
 	let jsonToSendFilter = 	{
 								"gender" : $("input[type=radio][name=gender]:checked").val(),
